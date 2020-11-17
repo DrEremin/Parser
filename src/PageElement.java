@@ -2,21 +2,22 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Objects;
+
 import lombok.Data;
 import org.jsoup.nodes.Element;
 
 /**
  * Класс PageElement является шаблоном для создания объектов,
- * содержащих ссылку на вакансию, ее заголовок и
- * дату ее опубликования на странице сайта
+ * содержащих ссылку на каждую вакансию, ее заголовок и
+ * дату ее публикации на странице сайта
  */
 
 @Data
 public class PageElement implements Comparable<Calendar> {
 
-    public static final String[] MONTHS = new String[] {"янв", "фев", "мар",
+    public static final String[] MONTHS = new String[]{"янв", "фев", "мар",
             "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"};
-    final static int[] FIELDS = new int[] {5, 2, 1, 11, 12}; // нужные поля класса Calendar
+    final static int[] FIELDS = new int[]{5, 2, 1, 11, 12}; // нужные поля класса Calendar
 
     public static int ageOfVacancy;        // допустиммая давность вакансии (в месяцах)
     private final String linkOnVacancy;    // ссылка на вакансию
@@ -39,7 +40,7 @@ public class PageElement implements Comparable<Calendar> {
      * Метод определения соответствия строки-даты и шаблона
      */
 
-    public boolean isDate (String stringDate) {
+    public boolean isDate(String stringDate) {
         boolean flag1 = stringDate.matches(
                 "[0-9]{1,2}\\s[авгдеийклмнопрстфюя]{3}\\s[0-9]{2},\\s[0-9]{2}:[0-9]{2}");
         boolean flag2 = stringDate.matches("вчера,\\s[0-9]{2}:[0-9]{2}");

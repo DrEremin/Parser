@@ -8,20 +8,34 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import lombok.Data;
 
+/**
+ * Класс VacancyToFile описывает объект, который парсит страницу каждой вакансии
+ * из списка объектов класса PageElement, создает html-файл  и записывает в него
+ * искомые элементы.
+ */
 
 @Data
 public class VacancyToFile {
 
-    public static final int TIMEOUT = 60000;         // время ожидания соединения с сайтом (в миллисекундах)
-    private Element vacancy;
-    private URL linkOnPage;                    // объект класса URL для связи со страницей сайта
-    PrintWriter htmlPrint;
+    public static final int TIMEOUT = 60000;   // время ожидания соединения с сайтом (в миллисекундах)
+    private Element vacancy;                   // поле для хранения очередного искомого элемента
+    private URL linkOnPage;                    // объект класса URL для связи со страницей вакансии
+    PrintWriter htmlPrint;                     // поле потока куда идет запись результатов
+
+    /*
+     * конструктор класса без параметров
+     */
 
     public VacancyToFile() {
         fileCreate();
         this.vacancy = null;
         this.linkOnPage = null;
     }
+
+    /*
+     * Метод загрузки содержимого html-документа страницы вакансии,
+     * заключенного внутри тега <body></body>
+     */
 
     public Element bodyOfPage() {
         try {
@@ -31,6 +45,10 @@ public class VacancyToFile {
             return null;
         }
     }
+
+    /*
+     * Метод создания файла для записи результатов
+     */
 
     public void fileCreate() {
         File htmlFile = new File("/home/ivan", "1.html");
@@ -43,6 +61,10 @@ public class VacancyToFile {
             return;
         }
     }
+
+    /*
+     * Метод вывода результатов в файл
+     */
 
     public void output () {
         htmlPrint.println("<!DOCTYPE html>\n<html>\n\t<head>\n\t\t<meta charset = \"UTF-8\">" +
@@ -59,5 +81,6 @@ public class VacancyToFile {
             }
         }
         htmlPrint.println("\t</body>\n<html>");
+        htmlPrint.close();
     }
 }
