@@ -8,6 +8,7 @@ public class Main {
         page.parsePages();
         VacancyToFile out = new VacancyToFile();
         out.output();
+
     }
 }
     /*final String SITE = "https://www.sql.ru/forum/job-offers"; separatorChar*/

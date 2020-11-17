@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Parser:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Parser_jar</output-path>
+    <root id="archive" name="Parser.jar">
+      <element id="module-output" name="Parser" />
+      <element id="extracted-dir" path="/opt/jdk-14.0.2/lib/jsoup-1.13.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="/opt/jdk-14.0.2/lib/lombok.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
