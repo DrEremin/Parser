@@ -1,6 +1,9 @@
+import java.util.logging.Logger;
+
 public class Main {
 
     public static final String SITE = "https://www.sql.ru/forum/job-offers";
+    //private static final Logger myLogger = Logger.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
 
