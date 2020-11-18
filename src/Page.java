@@ -47,7 +47,7 @@ public class Page {
             PageElement.ageOfVacancy = ageOfVacancy;
         } catch (MalformedURLException e) {
             this.linkOnPage = null;
-            //logg
+            //логирование пока не сделал
         }
     }
 
@@ -60,7 +60,7 @@ public class Page {
         try {
             return Jsoup.parse(linkOnPage, TIMEOUT).body();
         } catch (IOException e) {
-            //логирование
+            //логирование пока не сделал
             return null;
         }
     }
@@ -122,7 +122,7 @@ public class Page {
             linkOnPage = new URL(nextPage.attr("href"));
         } catch (MalformedURLException e) {
             this.linkOnPage = null;
-            //logg
+            //логирование пока не сделал
         }
     }
 

@@ -41,7 +41,7 @@ public class VacancyToFile {
         try {
             return Jsoup.parse(linkOnPage, TIMEOUT).body();
         } catch (IOException e) {
-            //логирование
+            //логирование пока не сделал
             return null;
         }
     }
@@ -57,7 +57,7 @@ public class VacancyToFile {
             htmlPrint = new PrintWriter (new FileWriter(htmlFile), true);
         } catch (IOException e) {
             System.out.println("no file");
-            //logg
+            //логирование пока не сделал
             return;
         }
     }
@@ -77,7 +77,7 @@ public class VacancyToFile {
                 htmlPrint.println("\t\t" + vacancy + "<hr>");
             } catch (MalformedURLException e) {
                 this.linkOnPage = null;
-                //logg
+                //логирование пока не сделал
             }
         }
         htmlPrint.println("\t</body>\n<html>");
