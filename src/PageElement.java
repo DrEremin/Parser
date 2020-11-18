@@ -2,7 +2,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Objects;
-
 import lombok.Data;
 import org.jsoup.nodes.Element;
 
@@ -86,7 +85,7 @@ public class PageElement implements Comparable<Calendar> {
                     if (value < 0) {
                         date = new GregorianCalendar(1900, Calendar.JANUARY, 1, 0, 0);
                         invalidDate = true;
-                        //logg
+                        //логирование пока не сделал
                         return;
                     }
                 } else if (i == 2) {

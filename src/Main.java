@@ -1,9 +1,10 @@
-import java.util.logging.Logger;
+//import java.util.logging.Logger;
 
 public class Main {
 
     public static final String SITE = "https://www.sql.ru/forum/job-offers";
     //private static final Logger myLogger = Logger.getLogger(Main.class.getName());
+    //логирование пока не сделал
 
     public static void main(String[] args) {
 
@@ -18,7 +19,7 @@ public class Main {
             out.output();
         } else {
             System.out.println("Некорректный ввод аргумента\nПрограмма завершает работу");
-            //logg
+            //логирование пока не сделал
         }
     }
 
